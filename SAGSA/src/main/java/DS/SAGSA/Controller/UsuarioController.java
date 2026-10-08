@@ -1,7 +1,7 @@
 package DS.SAGSA.Controller;
 
 import DS.SAGSA.models.Usuario;
-import DS.SAGSA.Service.UsuarioService;
+import DS.SAGSA.Services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
