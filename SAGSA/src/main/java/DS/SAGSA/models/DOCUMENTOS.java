@@ -1,5 +1,5 @@
 // Define o pacote ao qual esta classe pertence (pasta Models dentro do projeto)
-package DS.SAGSA;
+package DS.SAGSA.models;
 
 // Importa a classe LocalDate para podermos trabalhar com datas (ano, mês, dia) sem hora
 import java.time.LocalDate;

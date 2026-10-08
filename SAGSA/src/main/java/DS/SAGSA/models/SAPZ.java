@@ -5,7 +5,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "SAPZ")
-public class Sapz {
+public class SAPZ {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +28,7 @@ public class Sapz {
     @JoinColumn(name = "FK_Professor_id_professor")
     private Professor professor;
 
-    public Sapz() {}
+    public SAPZ() {}
 
     public Integer getIdSapz() {
         return idSapz;
