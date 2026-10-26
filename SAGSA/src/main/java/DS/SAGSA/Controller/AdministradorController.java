@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import jakarta.validation.Valid;
 import DS.SAGSA.models.Administrador;
 import DS.SAGSA.Services.AdministradorService;
 
@@ -44,7 +43,7 @@ public class AdministradorController {
 
     // Criar/Salvar novo administrador
     @PostMapping
-    public ResponseEntity<Void> salvarAdministrador(@Valid @RequestBody Administrador obj) {
+    public ResponseEntity<Void> salvarAdministrador(@Validated @RequestBody Administrador obj) {
         this.administradorService.salvarAdministrador(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}").buildAndExpand(obj.getIdAdministrador()).toUri();
@@ -53,7 +52,7 @@ public class AdministradorController {
 
     // Atualizar administrador existente
     @PutMapping("/{id}")
-    public ResponseEntity<Void> atualizar(@Valid @RequestBody Administrador obj, @PathVariable Long id) {
+    public ResponseEntity<Void> atualizar(@Validated @RequestBody Administrador obj, @PathVariable Long id) {
         obj.setIdAdministrador(id);
         this.administradorService.atualizar(obj);
         return ResponseEntity.noContent().build();

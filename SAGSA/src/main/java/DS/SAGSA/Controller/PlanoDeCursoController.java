@@ -1,7 +1,7 @@
 package DS.SAGSA.Controller;
 
 import DS.SAGSA.models.PlanoDeCurso;
-import DS.SAGSA.Service.PlanoDeCursoService;
+import DS.SAGSA.Services.PlanoDeCursoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

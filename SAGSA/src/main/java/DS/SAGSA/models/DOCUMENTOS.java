@@ -3,6 +3,7 @@ package DS.SAGSA.models;
 
 // Importa a classe LocalDate para podermos trabalhar com datas (ano, mês, dia) sem hora
 import java.time.LocalDate;
+import java.util.Map;
 
 // Declaração da classe publica DOCUMENTOS que representa a entidade/tabela do banco de dados
 public class DOCUMENTOS { 
@@ -83,5 +84,15 @@ public class DOCUMENTOS {
     // Define/Altera o ID do usuário associado
     public void setIdUsuario(int idUsuario) { 
         this.idUsuario = idUsuario; 
+    }
+
+    public void setId(Long id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setId'");
+    }
+
+    public Map<String, ?> getId() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getId'");
     }
 }

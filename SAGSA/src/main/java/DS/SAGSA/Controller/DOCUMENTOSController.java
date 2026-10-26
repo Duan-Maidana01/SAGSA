@@ -16,9 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import jakarta.validation.Valid;
 import DS.SAGSA.models.DOCUMENTOS;
-import DS.SAGSA.DOCUMENTOSService;
+import DS.SAGSA.Services.DOCUMENTOSService;
 
 @RestController
 @RequestMapping("/documentos")
@@ -43,14 +42,14 @@ public class DOCUMENTOSController {
         
     }
     @PostMapping ("/{id}")
-    public ResponseEntity<DOCUMENTOS> salvarDocumentos(@Valid @ResquestBody DOCUMENTOS obj) {
+    public ResponseEntity<DOCUMENTOS> salvarDocumentos(@Validated @RequestBody DOCUMENTOS obj) {
         this.documentosService.salvarDocumentos(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}").buildAndExpand(obj.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
     @PutMapping ("/{id}")
-    public ResponseEntity<DOCUMENTOS> atualizar(@Valid @ResquestBody DOCUMENTOS obj, @PathVariable Long id) {
+    public ResponseEntity<DOCUMENTOS> atualizar(@Validated @RequestBody DOCUMENTOS obj, @PathVariable Long id) {
         obj.setId(id);
         this.documentosService.atualizar(obj);
         return ResponseEntity.noContent().build();

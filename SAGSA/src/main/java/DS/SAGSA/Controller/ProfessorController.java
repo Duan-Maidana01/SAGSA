@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import jakarta.Validation.Valid;
 import DS.SAGSA.models.Professor;
 import DS.SAGSA.Services.ProfessorService;
 
@@ -41,7 +40,7 @@ public class ProfessorController {
     }
     
     @PostMapping
-    public ResponseEntity<Professor> salvarProfessor(@Valid @RequestBody Professor obj) {
+    public ResponseEntity<Professor> salvarProfessor(@Validated @RequestBody Professor obj) {
         this.professorService.salvarProfessor(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}").buildAndExpand(obj.getId()).toUri();
@@ -49,7 +48,7 @@ public class ProfessorController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Professor> atualizar(@Valid @RequestBody Professor obj, @PathVariable Integer id) {
+    public ResponseEntity<Professor> atualizar(@Validated @RequestBody Professor obj, @PathVariable Integer id) {
         obj.setId(id);
         this.professorService.atualizar(obj);
         return ResponseEntity.noContent().build();

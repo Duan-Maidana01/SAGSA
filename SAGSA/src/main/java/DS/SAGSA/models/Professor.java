@@ -1,5 +1,7 @@
 package DS.SAGSA.models;
 
+import java.util.Map;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -58,5 +60,15 @@ public class Professor {
 
     public void setTitulacao(String titulacao) {
         this.titulacao = titulacao;
+    }
+
+    public Map<String, ?> getId() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getId'");
+    }
+
+    public void setId(Integer id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setId'");
     }
 }
