@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Painel — SAGSA</title>
+
+</head>
+
+<body>
+
+    <main>
+
+        <h1>Bem-vindo ao SAGSA!</h1>
+
+        <p id="nomeUsuario">Carregando usuário...</p>
+
+        <p id="perfilUsuario"></p>
+
+        <button id="btnSair">Sair</button>
+
+    </main>
+
+    <script type="module">
+
+        import { buscarUsuario, sair } from "./js/api.js";
+
+        const nomeUsuario = document.getElementById("nomeUsuario");
+        const perfilUsuario = document.getElementById("perfilUsuario");
+        const btnSair = document.getElementById("btnSair");
+
+        try {
+
+            const usuario = await buscarUsuario();
+
+            nomeUsuario.textContent = `Olá, ${usuario.nome}!`;
+
+            perfilUsuario.textContent = `Perfil: ${usuario.perfil}`;
+
+        } catch (erro) {
+
+            localStorage.removeItem("token");
+            localStorage.removeItem("usuario");
+
+            window.location.href = "./index.html";
+
+        }
+
+        btnSair.addEventListener("click", sair);
+
+    </script>
+
+</body>
+
+</html>
