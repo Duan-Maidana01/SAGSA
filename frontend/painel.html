@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel — SAGSA</title>
+<link rel="stylesheet" href="./style.css"><link rel="stylesheet" href="./painel.css">
+</head>
+<body class="painel">
+<aside class="menu">
+  <div class="marca">SAGSA</div>
+  <nav id="menuLista"></nav>
+  <div class="usuario"><span id="nomeUsuario">...</span><small id="perfilUsuario"></small>
+  <button id="btnSair" class="botao-sec">Sair</button></div>
+</aside>
+<main class="conteudo">
+  <header class="topo"><h1 id="tituloPagina">Início</h1>
+    <div class="acoes"><input id="busca" placeholder="Buscar..." hidden><button id="btnNovo" class="botao-principal" hidden>+ Novo</button></div></header>
+  <p id="aviso"></p>
+  <section id="area"></section>
+</main>
+<dialog id="modal"><form id="formRegistro" method="dialog">
+  <h2 id="tituloModal">Novo</h2><div id="camposForm"></div>
+  <p id="erroForm"></p>
+  <div class="rodape"><button type="button" id="btnCancelar" class="botao-sec">Cancelar</button><button type="submit" class="botao-principal">Salvar</button></div>
+</form></dialog>
+<script type="module" src="./painel.js"></script>
+</body></html>
