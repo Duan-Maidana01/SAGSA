@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -70,3 +71,77 @@
 </body>
 
 </html>
+=======
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Entrar — SAGSA</title>
+
+    <meta name="description" content="Acesse o SAGSA, Sistema de Gestão de Situações de Aprendizagem.">
+
+    <link rel="stylesheet" href="./style.css">
+
+    <script type="module" src="./login.js"></script>
+</head>
+
+<body>
+
+    <main class="login-container">
+
+        <h1>Entrar</h1>
+
+        <p class="subtitulo">
+            Acesse sua conta para continuar.
+        </p>
+
+        <form id="formLogin" novalidate>
+
+            <label for="email">E-mail</label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="voce@escola.com"
+                autocomplete="email"
+            >
+
+            <label for="senha">Senha</label>
+
+            <div class="senha-container">
+
+                <input
+                    type="password"
+                    id="senha"
+                    placeholder="Digite sua senha"
+                    autocomplete="current-password"
+                >
+
+                <button type="button" id="mostrarSenha">
+                    Mostrar
+                </button>
+
+            </div>
+
+            <p id="mensagemErro" role="alert"></p>
+
+            <button type="submit" id="btnEntrar" class="botao-principal">
+                Entrar
+            </button>
+
+        </form>
+
+        <p class="informacao">
+            As contas são criadas pelo administrador em Administração → Usuários.
+        </p>
+
+    </main>
+
+</body>
+
+</html>
+>>>>>>> 33cb5c8b847de7fa1924c41968c70122732670ff
