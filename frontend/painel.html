@@ -1,58 +1,32 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Painel — SAGSA</title>
-
+    <link rel="stylesheet" href="./style.css">
 </head>
-
 <body>
-
-    <main>
-
+    <main class="login-container">
         <h1>Bem-vindo ao SAGSA!</h1>
-
-        <p id="nomeUsuario">Carregando usuário...</p>
-
-        <p id="perfilUsuario"></p>
-
-        <button id="btnSair">Sair</button>
-
+        <p id="nomeUsuario" class="subtitulo">Carregando usuário...</p>
+        <p id="perfilUsuario" class="informacao" style="text-align:left;margin-top:0"></p>
+        <button id="btnSair" class="botao-principal">Sair</button>
     </main>
-
     <script type="module">
-
-        import { buscarUsuario, sair } from "./js/api.js";
-
+        import { buscarUsuario, sair } from "./api.js";
         const nomeUsuario = document.getElementById("nomeUsuario");
         const perfilUsuario = document.getElementById("perfilUsuario");
-        const btnSair = document.getElementById("btnSair");
-
+        document.getElementById("btnSair").addEventListener("click", sair);
         try {
-
             const usuario = await buscarUsuario();
-
             nomeUsuario.textContent = `Olá, ${usuario.nome}!`;
-
             perfilUsuario.textContent = `Perfil: ${usuario.perfil}`;
-
-        } catch (erro) {
-
+        } catch {
             localStorage.removeItem("token");
             localStorage.removeItem("usuario");
-
             window.location.href = "./index.html";
-
         }
-
-        btnSair.addEventListener("click", sair);
-
     </script>
-
 </body>
-
 </html>

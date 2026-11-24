@@ -4,7 +4,9 @@ import { API_URL } from "./config.js";
 // AUTENTICAÇÃO
 export async function entrar(email, senha) {
 
-    const resposta = await fetch(`${API_URL}/login`, {
+    let resposta;
+    try {
+    resposta = await fetch(`${API_URL}/login`, {
 
         method: "POST",
 
@@ -18,8 +20,12 @@ export async function entrar(email, senha) {
         })
 
     });
+    } catch {
+        throw new Error("Não foi possível conectar ao servidor. Verifique se o backend está rodando.");
+    }
 
-    const dados = await resposta.json();
+    let dados = {};
+    try { dados = await resposta.json(); } catch { /* resposta sem JSON */ }
 
     if (!resposta.ok) {
 
@@ -78,6 +84,6 @@ export function sair() {
 
     localStorage.removeItem("usuario");
 
-    window.location.href = "../index.html";
+    window.location.href = "./index.html";
 
 }

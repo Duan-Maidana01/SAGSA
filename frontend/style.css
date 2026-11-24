@@ -103,7 +103,7 @@ input:focus {
     margin-top: 12px;
 }
 
-#btnEntrar {
+.botao-principal {
     width: 100%;
 
     margin-top: 22px;
@@ -122,11 +122,11 @@ input:focus {
     transition: 0.2s;
 }
 
-#btnEntrar:hover {
+.botao-principal:hover {
     filter: brightness(0.95);
 }
 
-#btnEntrar:disabled {
+.botao-principal:disabled {
     opacity: 0.6;
     cursor: not-allowed;
 }
