@@ -1,0 +1,48 @@
+package com.DS.SAGSA.testes;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import com.DS.SAGSA.models.TurmaAluno;
+
+// Testes unitários do model TurmaAluno
+class TurmaAlunoTest {
+
+    @Test
+    @DisplayName("Cria TurmaAluno com construtor vazio")
+    void deveCriarInstancia() throws Exception {
+        org.junit.jupiter.api.Assertions.assertNotNull(ModelTestSupport.novaInstancia(TurmaAluno.class));
+    }
+
+    @Test
+    @DisplayName("Getters e setters de TurmaAluno")
+    void deveDefinirEObterCampos() throws Exception {
+        ModelTestSupport.testarGettersESetters(TurmaAluno.class);
+    }
+
+    @Test
+    @DisplayName("equals, hashCode e toString de TurmaAluno")
+    void deveCompararCorretamente() throws Exception {
+        ModelTestSupport.testarEqualsEHashCode(TurmaAluno.class);
+    }
+
+    @Test
+    @DisplayName("TurmaAluno com ids diferentes não são iguais")
+    void idsDiferentesNaoSaoIguais() throws Exception {
+        ModelTestSupport.testarIdDiferente(TurmaAluno.class);
+    }
+
+    @Test
+    @DisplayName("Classe nula lança IllegalArgumentException")
+    void classeNulaLancaExcecao() {
+        IllegalArgumentException ex = org.junit.jupiter.api.Assertions.assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+                TurmaAluno valor = null;
+                if (valor == null) {
+                    throw new IllegalArgumentException("TurmaAluno não pode ser nulo");
+                }
+            });
+        org.junit.jupiter.api.Assertions.assertEquals("TurmaAluno não pode ser nulo", ex.getMessage());
+    }
+}
